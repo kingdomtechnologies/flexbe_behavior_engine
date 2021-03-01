@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+	<arg name="log_param" default="[publish]"/>
+	<rosparam param="/behavior/log_config/loggers/flexbe/handlers" subst_value="True">$(arg log_param)</rosparam>
+	<!-- Charger action server -->
+	<include file="$(find flexbe_onboard)/launch/behavior_onboard.launch">
+	      <arg name="log_enabled" value="True"/>
+	</include>
+
+
+</launch>
+
